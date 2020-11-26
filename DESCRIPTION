@@ -1,0 +1,15 @@
+Package: CVX
+Title: CopulaView Explorer: Allows one to visualize the effect of various copula models 
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Jacques",
+           family = "Rioux",
+           role = c("aut", "cre"),
+           email = "jacques.rioux@outlook.com",
+           comment = c(ORCID = "0000-0003-0984-4413"))
+Description: This package allows one to simulate various copula models as well as applying a copula modelto a multi dimensional sample. Also generate empirical copula for any sample .
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
