@@ -1,5 +1,5 @@
 Package: CVX
-Title: CopulaView Explorer: Allows one to visualize the effect of various copula models 
+Title: Copula View and Explore: Allows one to visualize the effect of various copula models 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Jacques",
@@ -13,3 +13,5 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+URL: https://github.com/jariou/CVX
+BugReports: https://github.com/jariou/CVX/issues
