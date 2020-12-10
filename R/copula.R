@@ -1,22 +1,20 @@
 #----------------------------------------------
-#' copula
+#' The \code{copula} function
 #'
 #' \code{copula} generates the empirical copula
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param jointSample An object of class "jointSample" such as
-#' created by a call to smile or frown
+#' @param joint_sample
+#' An object of class \code{jointSample} such as
+#' created by a call to \code{smile} or \code{frown}
 #'
-#' @return The empirical copula model of thejont sample
-#' input \deqn{\int_0^1xdx= \frac{x^2}{2} + C}
-#' and
-#' \deqn{p(x) = \frac{\lambda^x e^{-\lambda}}{x!}}{%p(x) =
-#' \lambda^x exp(-\lambda)/x!} for \eqn{x = 0, 1, 2, \ldots}.
-#' @export
+#' @return The empirical copula model of the joint sample
 #'
-#' @examples
-#' copula(joint_sample)
+#' @examples sum(9,5)
+#'
+#' @seealso \url{https://www.r-project.org}
+#'
 copula <- function(joint_sample) {
   size  <- length(joint_sample$x)
   tmp_0 <- lapply(joint_sample, rank)

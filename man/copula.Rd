@@ -2,20 +2,16 @@
 % Please edit documentation in R/copula.R
 \name{copula}
 \alias{copula}
-\title{copula}
+\title{The \code{copula} function}
 \usage{
 copula(joint_sample)
 }
 \arguments{
-\item{jointSample}{An object of class "jointSample" such as
-created by a call to smile or frown}
+\item{joint_sample}{An object of class \code{jointSample} such as
+created by a call to \code{smile} or \code{frown}}
 }
 \value{
-The empirical copula model of thejont sample
-input \deqn{\int_0^1xdx= \frac{x^2}{2} + C}
-and
-\deqn{p(x) = \frac{\lambda^x e^{-\lambda}}{x!}}{%p(x) =
-\lambda^x exp(-\lambda)/x!} for \eqn{x = 0, 1, 2, \ldots}.
+The empirical copula model of the joint sample
 }
 \description{
 \code{copula} generates the empirical copula
@@ -23,5 +19,9 @@ corresponding to the joint sample passed in
 as input
 }
 \examples{
-copula(joint_sample)
+sum(9,5)
+
+}
+\seealso{
+\url{https://www.r-project.org}
 }
