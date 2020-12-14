@@ -21,14 +21,14 @@ pizza, default to \code{0}}
 
 \item{y0}{y coordinate of the center of the disk, default to \code{0}}
 
-\item{from}{starting point of the arc as a fraction of the
-whole circumference starting from the rightmost point
-and drawing the circle in a counter-clockwise direction,
+\item{from}{starting point of the arc as a fraction of the whole
+circumference starting from the rightmost point and
+drawing the circle in a counter-clockwise direction,
 default to \code{0}}
 
-\item{to}{ending point of the arc as a fraction of the
-whole circumference starting from the rightmost point
-and drawing the circle in a counter-clockwise direction,
+\item{to}{ending point of the arc as a fraction of the whole
+circumference starting from the rightmost point and
+drawing the circle in a counter-clockwise direction,
 default to \code{0}}
 }
 \value{
@@ -46,16 +46,12 @@ user to quickly generate two-dimensional samples
 with very different dependency structures.
 }
 \examples{
-mySample <- pizza(5000)
+pizza(5000)
 
 }
 \seealso{
-\url{https://www.r-project.org}
-
-\code{\link{frown}} for products,
-\code{\link{cumsum}} for cumulative sums, and
-\code{\link{colSums}}/\code{\link{rowSums}}
-marginal sums over high-dimensional arrays.
+\code{\link{frown}},\code{\link{smile}},
+\code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 
 Other Two-dimensionalsampling functions.: 
 \code{\link{circle}()},

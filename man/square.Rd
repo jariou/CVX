@@ -27,11 +27,12 @@ user to quickly generate two-dimensional samples
 with very different dependency structures.
 }
 \examples{
-mySample <- square(5000)
+square(5000)
 
 }
 \seealso{
-\url{https://www.r-project.org}
+\code{\link{frown}},\code{\link{smile}},
+\code{\link{circle}}, \code{\link{pizza}}, \code{\link{triangle}}.
 
 \code{\link{frown}} for products,
 \code{\link{cumsum}} for cumulative sums, and

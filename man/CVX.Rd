@@ -3,15 +3,21 @@
 \docType{package}
 \name{CVX}
 \alias{CVX}
-\title{CVX: A package for computating the notorious bar statistic}
+\title{CVX: A package for Copula Visual eXploration}
 \description{
-The CVX package provides three categories of important functions:
-foo, bar and baz.
+The CVX package provides three categories of functions:
+\itemize{
+\item functions to easily generate 2-dimensionaljoint samples
+with markedly different dependency structures
+\item functions to generate copulas from joint samples
+as well as joint samples from copulas
+\item functions to plot and toanimate copulas or joint samples
+}
 }
 \section{Simple two dimensional joint sample models}{
 
 \itemize{
-\item \link{frown}
+\item \code{\link{frown}}
 \item \link{smile}
 \item \link{circle}
 \item \link{pizza}
@@ -22,19 +28,25 @@ foo, bar and baz.
 
 \section{Copula models}{
 
-
-\code{CommonShock}
-\code{ErlangMixtures}
+\itemize{
+\item \code{CommonShock}
+\item \code{ErlangMixtures}
+}
 }
 
 \section{Utility functions}{
 
-
-The foo functions ...
+\itemize{
+\item \code{PlotSample}
+\item \code{CopMovie}
+}
 }
 
 \section{Other functions}{
 
-The foo functions ...
+\itemize{
+\item \code{OtherFunction1}
+\item \code{OtherFunction2}
+}
 }
 

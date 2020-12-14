@@ -26,12 +26,9 @@
 #' @examples
 #' frown(5000)
 #'
-#' @seealso
-#' \url{https://www.r-project.org} as well as \code{\link{circle}}
-#' for products, \code{\link{cumsum}} for cumulative sums, and
-#' \code{\link{colSums}}/\code{\link{rowSums}} marginal sums over
-#' high-dimensional arrays.
-#'
+#' @seealso \code{\link{triangle}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
+#' 
 #' @family Two-dimensional sampling functions.
 #'
 #' @aliases frown1 frown2 frown3
@@ -98,11 +95,8 @@ function(n, x0 = 0, y0 = 0, main_radius = 1, eye_radius = 0.25,
 #' @examples
 #' smile(5000)
 #'
-#' @seealso
-#' \url{https://www.r-project.org} as well as \code{\link{circle}}
-#' for products, \code{\link{cumsum}} for cumulative sums, and
-#' \code{\link{colSums}}/\code{\link{rowSums}} marginal sums over
-#' high-dimensional arrays.
+#' @seealso \code{\link{frown}},\code{\link{triangle}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 #'
 #' @family Two-dimensional sampling functions.
 #'
@@ -181,16 +175,12 @@ function(
 #' @export
 #' @examples
 #' circle(5000)
-#' 
-#' @seealso \url{https://www.r-project.org}
 #'
 #' @family Two-dimensionalsampling functions.
 #'
-#' @seealso \code{\link{frown}} for products,
-#' \code{\link{cumsum}} for cumulative sums, and
-#' \code{\link{colSums}}/\code{\link{rowSums}}
-#' marginal sums over high-dimensional arrays.
-#'
+#' @seealso \code{\link{frown}},\code{\link{smile}},
+#' \code{\link{triangle}}, \code{\link{pizza}}, \code{\link{square}}.
+#' 
 #' @aliases circle1 circle2 circle3
 circle <- function(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1) {
   theta <- 2 * (from + stats::runif(n) * (to - from)) * pi
@@ -234,19 +224,15 @@ circle <- function(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1) {
 #' @return A list with two vectors of x and y of the samples coordinates.
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
-#' 
+#'
 #' @export
 #' @examples
 #' pizza(5000)
-#' 
-#' @seealso \url{https://www.r-project.org}
 #'
 #' @family Two-dimensionalsampling functions.
 #'
-#' @seealso \code{\link{frown}} for products,
-#' \code{\link{cumsum}} for cumulative sums, and
-#' \code{\link{colSums}}/\code{\link{rowSums}}
-#' marginal sums over high-dimensional arrays.
+#' @seealso \code{\link{frown}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 #'
 #' @aliases pizza1 pizza2 pizza3
 pizza <-
@@ -288,8 +274,9 @@ function(n, r = 1, hole = 0, x0 = 0, y0 = 0, from = 0, to = 1) {
 #' @export
 #' @examples
 #' square(5000)
-#' 
-#' @seealso \url{https://www.r-project.org}
+#'
+#' @seealso \code{\link{frown}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{triangle}}.
 #'
 #' @family Two-dimensionalsampling functions.
 #'
@@ -333,11 +320,9 @@ function(n) {
 #' triangle(5000)
 #'
 #' @family Two-dimensionalsampling functions.
-#' @seealso \url{https://www.r-project.org}
-#' @seealso \code{\link{frown}} for products,
-#' \code{\link{cumsum}} for cumulative sums, and
-#' \code{\link{colSums}}/\code{\link{rowSums}}
-#' marginal sums over high-dimensional arrays.
+# @seealso \url{https://www.r-project.org}
+#' @seealso \code{\link{frown}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 #'
 #' @aliases triangle1 triangle2 triangle3
 triangle <-

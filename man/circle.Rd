@@ -18,14 +18,14 @@ circle(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1)
 
 \item{y0}{y coordinate of the center of the circle, default to \code{0}}
 
-\item{from}{starting point of the arc as a fraction of the
-whole circumference starting from the rightmost point
-and drawing the circle in a counter-clockwise direction,
+\item{from}{starting point of the arc as a fraction of the whole
+circumference starting from the rightmost point and
+drawing the circle in a counter-clockwise direction,
 default to \code{0}}
 
-\item{to}{ending point of the arc as a fraction of the
-whole circumference starting from the rightmost point
-and drawing the circle in a counter-clockwise direction,
+\item{to}{ending point of the arc as a fraction of the whole
+circumference starting from the rightmost point and
+drawing the circle in a counter-clockwise direction,
 default to \code{0}}
 }
 \value{
@@ -43,16 +43,12 @@ user to quickly generate two-dimensional samples
 with very different dependency structures.
 }
 \examples{
-mySample <- circle(5000)
+circle(5000)
 
 }
 \seealso{
-\url{https://www.r-project.org}
-
-\code{\link{frown}} for products,
-\code{\link{cumsum}} for cumulative sums, and
-\code{\link{colSums}}/\code{\link{rowSums}}
-marginal sums over high-dimensional arrays.
+\code{\link{frown}},\code{\link{smile}},
+\code{\link{triangle}}, \code{\link{pizza}}, \code{\link{square}}.
 
 Other Two-dimensionalsampling functions.: 
 \code{\link{pizza}()},

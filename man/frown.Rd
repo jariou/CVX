@@ -51,14 +51,12 @@ user to quickly generate two-dimensional samples
 with very different dependency structures.
 }
 \examples{
-mySample <- frown(5000)
+frown(5000)
 
 }
 \seealso{
-\url{https://www.r-project.org} as well as \code{\link{circle}}
-for products, \code{\link{cumsum}} for cumulative sums, and
-\code{\link{colSums}}/\code{\link{rowSums}} marginal sums over
-high-dimensional arrays.
+\code{\link{triangle}},\code{\link{smile}},
+\code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 
 Other Two-dimensional sampling functions.: 
 \code{\link{smile}()}
