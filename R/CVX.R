@@ -31,6 +31,10 @@
 #' - \code{OtherFunction1}
 #' - \code{OtherFunction2}
 #'
+#' @import stats
+#' @import graphics
+#' 
+#' 
 #' @docType package
 #' @name CVX
 NULL

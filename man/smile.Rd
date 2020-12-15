@@ -59,6 +59,9 @@ smile(5000)
 \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 
 Other Two-dimensional sampling functions.: 
-\code{\link{frown}()}
+\code{\link{Exponential}()},
+\code{\link{frown}()},
+\code{\link{plot.jointSample}()},
+\code{\link{print.jointSample}()}
 }
 \concept{Two-dimensional sampling functions.}

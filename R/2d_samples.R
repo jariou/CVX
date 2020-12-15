@@ -1,3 +1,149 @@
+#---- BEGIN plot.jointSample ------------------------------
+#' Plot a joint sample
+#'
+#' \code{frown} simulates points in the plan
+#' as if they were distributed uniformly on
+#' a drawing of a frowning face.
+#'
+#' This and the list of functions below allows the
+#' user to quickly generate two-dimensional samples
+#' with very different dependency structures.
+#'
+#' @param x the size of the sample
+#' @param pch the size of the sample
+#' @param cex the size of the sample
+#' @param all the size of the sample
+#' @param ... the size of the sample
+#'
+#' @return a list with two vectors of x and y of the samples coordinates.
+#'         The two list members are also named x and y and the list
+#'         itself is of class type \code{2dJointSample}.
+#'
+#' @export
+#' @examples
+#' plot(frown(5000), 15, 0.2, F, ...)
+#'
+#' @seealso \code{\link{triangle}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
+#'
+#' @family Two-dimensional sampling functions.
+#'
+#' @aliases plot.jointSample1 plot.jointSample2 plot.jointSample3
+plot.jointSample <-
+function(
+         x,
+         pch         = 20,
+         cex         = 0.1,
+         all         = F,
+         ...
+         ) {
+  if (all) {
+    # Setup the 4 plot canvases
+    par(
+        mfrow = c(2, 2),
+        mar   = c(0, 0, 0, 0),
+        mai   = c(0, 0, 0, 0)
+        )
+
+    # Plain X-Y plot of the sample
+    plot.default(
+                 x    = x,
+                 pch  = 20,
+                 cex  = 0.1,
+                 tcl  = 0,
+                 xlab = "",
+                 ylab = "",
+                 xaxt = "n",
+                 yaxt = 'n',
+                 ...
+                 )
+
+    # Plot flipped CDF of Y marginal
+    tmp_y <- my_cdf(x$y)
+    plot(
+         list(x = tmp_y$y, y = tmp_y$x),
+         pch  = 20,
+         cex  = 0.1,
+         tcl  = 0,
+         xlab = "",
+         ylab = "",
+         xaxt = "n",
+         yaxt = 'n',
+         ...
+         )
+
+    # Plot CDF of X marginal
+    plot(
+         my_cdf(x$x),
+         pch  = 20,
+         cex  = 0.1,
+         tcl  = 0,
+         xlab = "",
+         ylab = "",
+         xaxt = "n",
+         yaxt = 'n',
+         ...
+         )
+
+    # Plot of the copula
+    plot(
+         copula(x),
+         xaxt = "n",
+         xlab = "",
+         ylab = "",
+         xaxt = "n",
+         yaxt = 'n',
+         ...
+         )
+  }
+  else {
+        plot.default(
+                     x           = x,
+                     pch         = 20,
+                     cex         = 0.1,
+                     ...
+                     )
+  }
+}
+#---- END plot.jointSample --------------------------------
+
+#---- BEGIN print.jointSample -----------------------------
+#' Simulate a Uniform distribution on a frowning face
+#'
+#' \code{frown} simulates points in the plan
+#' as if they were distributed uniformly on
+#' a drawing of a frowning face.
+#'
+#' This and the list of functions below allows the
+#' user to quickly generate two-dimensional samples
+#' with very different dependency structures.
+#'
+#' @param x the size of the sample
+#' @param ... the size of the sample
+#'
+#' @return a list with two vectors of x and y of the samples coordinates.
+#'         The two list members are also named x and y and the list
+#'         itself is of class type \code{2dJointSample}.
+#'
+#' @export
+#' @examples
+#' print(frown(5000))
+#'
+#' @seealso \code{\link{triangle}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
+#'
+#' @family Two-dimensional sampling functions.
+#'
+#' @aliases print.jointSample1 print.jointSample2 print.jointSample3
+# Print method for the jointSample type
+print.jointSample <-
+function(x, ...) {
+  cat("Joint Sample\n")
+  NextMethod("print", x)
+  invisible(x)
+}
+#---- END print.jointSample -------------------------------
+
 #---- BEGIN frown -----------------------------------------
 #' Simulate a Uniform distribution on a frowning face
 #'
@@ -183,7 +329,7 @@ function(
 #' 
 #' @aliases circle1 circle2 circle3
 circle <- function(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1) {
-  theta <- 2 * (from + stats::runif(n) * (to - from)) * pi
+  theta <- 2 * (from + runif(n) * (to - from)) * pi
   x_pos <- r * cos(theta)
   y_pos <- r * sin(theta)
 
@@ -238,12 +384,12 @@ circle <- function(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1) {
 pizza <-
 function(n, r = 1, hole = 0, x0 = 0, y0 = 0, from = 0, to = 1) {
   radius_pos  <- sqrt(
-                      stats::runif(n) *
+                      runif(n) *
                       (r^2 - hole^2) +
                       hole^2
                       )
 
-  theta <- 2 * (from + stats::runif(n) * (to - from)) * pi
+  theta <- 2 * (from + runif(n) * (to - from)) * pi
   x_pos <- radius_pos * cos(theta)
   y_pos <- radius_pos * sin(theta)
 
@@ -289,8 +435,8 @@ function(n, r = 1, hole = 0, x0 = 0, y0 = 0, from = 0, to = 1) {
 square <-
 function(n) {
   me <- list(
-             x = stats::runif(n),
-             y = stats::runif(n)
+             x = runif(n),
+             y = runif(n)
              )
   class(me) <- append(class(me), "jointSample")
   return(me)
@@ -327,10 +473,10 @@ function(n) {
 #' @aliases triangle1 triangle2 triangle3
 triangle <-
 function(n, x0 = 0, y0 = 0) {
-  y  <- 1 - sqrt(stats::runif(n))
+  y  <- 1 - sqrt(runif(n))
 
   me <- list(
-             x = x0 + y / 2 + stats::runif(n) * (1 - y),
+             x = x0 + y / 2 + runif(n) * (1 - y),
              y = y0 + y
              )
   class(me) <- append(class(me), "jointSample")
