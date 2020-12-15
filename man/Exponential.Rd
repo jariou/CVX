@@ -5,7 +5,7 @@
 \alias{Exponential1}
 \alias{Exponential2}
 \alias{Exponential3}
-\title{Simulate a Uniform distribution on a frowning face}
+\title{Exponential Distribution with Scale parameter}
 \usage{
 Exponential(params)
 }
@@ -18,7 +18,7 @@ The two list members are also named x and y and the list
 itself is of class type \code{2dJointSample}.
 }
 \description{
-\code{frown} simulates points in the plan
+\code{Exponential} simulates points in the plan
 as if they were distributed uniformly on
 a drawing of a frowning face.
 }
@@ -27,11 +27,18 @@ This and the list of functions below allows the
 user to quickly generate two-dimensional samples
 with very different dependency structures.
 }
+\examples{
+Exponential(c(1000))
+
+}
 \seealso{
-\code{\link{triangle}},\code{\link{smile}},
-\code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
+\code{\link{Uniform}},\code{\link{Degenerate}},
+\code{\link{circle}}, \code{\link{InversePareto}}, \code{\link{Pareto}}.
 
 Other Two-dimensional sampling functions.: 
+\code{\link{Degenerate}()},
+\code{\link{InversePareto}()},
+\code{\link{Pareto}()},
 \code{\link{frown}()},
 \code{\link{plot.jointSample}()},
 \code{\link{print.jointSample}()},

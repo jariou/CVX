@@ -21,7 +21,7 @@
 #'
 #' @export
 #' @examples
-#' plot(frown(5000), 15, 0.2, F, ...)
+#' plot(frown(5000), 15, 0.2, FALSE)
 #'
 #' @seealso \code{\link{triangle}},\code{\link{smile}},
 #' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.

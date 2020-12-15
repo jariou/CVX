@@ -38,7 +38,10 @@ print(frown(5000))
 \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
 
 Other Two-dimensional sampling functions.: 
+\code{\link{Degenerate}()},
 \code{\link{Exponential}()},
+\code{\link{InversePareto}()},
+\code{\link{Pareto}()},
 \code{\link{frown}()},
 \code{\link{plot.jointSample}()},
 \code{\link{smile}()}
