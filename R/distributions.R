@@ -1,3 +1,47 @@
+#---- BEGIN my_cdf ----------------------------------------
+# Simple implementation of empirical cdf
+# Common Scale Factor Dependent Model
+# Perfect negative Dependency Copula
+# Perfect positive Dependency Copula
+# Make a movie from going from one plot to another one
+#' Generate the empirical copula from a joint random sample
+#'
+#' \code{copula} generates the empirical copula
+#' corresponding to the joint sample passed in
+#' as input
+#'
+#' @param x an object of type \code{2dJointSample}
+#'
+#' @return 
+#'         The two list members are also named x and y and the list
+#'         itself is of class type \code{2dJointSample}.
+#'
+#' @return The empirical copula model of the joint sample as a list
+#'         with two vectors of x and y of the samples coordinates.
+#'
+#' @export
+#' @examples
+#' my_cdf(frown(1000)$x)
+#'
+#' @aliases my_cdf1 my_cdf2 my_cdf3
+my_cdf <-
+function(x) {
+  sx    <- sort(x)
+  rl    <- rle(sx)
+
+  l     <- rl$lengths
+  ll    <- length(l)
+
+  my_x  <- rep(rl$values, l)
+  my_y  <- cumsum(rep(rep(1, ll), l))
+
+  list(
+       x = my_x, 
+       y = my_y
+       )
+}
+#---- END my_cdf ------------------------------------------
+
 #---- BEGIN Exponential -----------------------------------
 #' Exponential Distribution with Scale parameter
 #'

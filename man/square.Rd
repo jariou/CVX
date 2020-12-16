@@ -40,8 +40,13 @@ square(5000)
 marginal sums over high-dimensional arrays.
 
 Other Two-dimensionalsampling functions.: 
+\code{\link{Gaussian}()},
+\code{\link{as.joint_sample}()},
 \code{\link{circle}()},
+\code{\link{copMix}()},
 \code{\link{pizza}()},
+\code{\link{rMIErlang}()},
+\code{\link{rMIE}()},
 \code{\link{triangle}()}
 }
 \concept{Two-dimensionalsampling functions.}

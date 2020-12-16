@@ -382,7 +382,14 @@ circle <- function(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1) {
 #'
 #' @aliases pizza1 pizza2 pizza3
 pizza <-
-function(n, r = 1, hole = 0, x0 = 0, y0 = 0, from = 0, to = 1) {
+function( n, 
+          r    = 1, 
+          hole = 0, 
+          x0   = 0,
+          y0   = 0,
+          from = 0,
+          to   = 1
+          ) {
   radius_pos  <- sqrt(
                       runif(n) *
                       (r^2 - hole^2) +
@@ -483,3 +490,70 @@ function(n, x0 = 0, y0 = 0) {
   return(me)
 }
 #---- END triangle ----------------------------------------
+
+#---- BEGIN Gaussian --------------------------------------
+#' Simulate a joint normal distribution
+#'
+#' \code{Gaussian} simulates points in the plan as if they
+#' were distributed as joint Normal random variables.
+#'
+#' @param n the size of the sample
+#' @param mu  the vector of means
+#' @param sigmasq the covariance matrix
+#' @param rho correlation coefficient
+#'
+#' @return A list with two vectors of x and y of the samples 
+#'         coordinates. The two list members are also named 
+#'         x and y and the list itself is of class type 
+#'         \code{2dJointSample}.
+#'
+#' @export
+# @examples
+# Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36)) )
+#'
+#' @family Two-dimensionalsampling functions.
+#'
+#' @aliases Gaussian1 Gaussian2 Gaussian3
+Gaussian <-
+function(n, mu, sigmasq, rho) {return(0)}
+#---- END Gaussian ------------------------------------------
+
+#---- BEGIN as.joint_sample -------------------------------
+#' Transform data.frame into an object of type jointSample
+#'
+#' \code{as.joint_sample} takes a dataframe and extracts 2 
+#' columns of it and represent those as a two-dimensional
+#' joint sample.
+#'
+#' This and the list of functions below allows the
+#' user to quickly generate two-dimensional samples
+#' with very different dependency structures.
+#'
+#' @param df a dataframe
+#' @param dim1 the first column
+#' @param dim2 the second column
+#'
+#' @return A list with two vectors of x and y of the samples
+#'         coordinates. The two list members are also named
+#'         x and y and the list itself is of class type 
+#'         \code{2dJointSample}.
+#'
+#' @export
+# @examples
+# as.joint_sample(as.data.frame(frown(3000), y, x)
+#'
+#' @family Two-dimensionalsampling functions.
+#' @seealso \code{\link{frown}},\code{\link{smile}},
+#' \code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
+#'
+#' @aliases as.joint_sample1 as.joint_sample2 as.joint_sample3
+as.joint_sample <-
+function(df, dim1, dim2) {
+  me <- list(
+             x = df[names(df)[dim1]],
+             y = df[names(df)[dim2]]
+             )
+  class(me) <- "jointSample"
+  me
+}
+#---- END as.joint_sample ---------------------------------

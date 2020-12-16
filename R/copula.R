@@ -19,7 +19,10 @@
 #' copula(frown(1000))
 #'
 #' @aliases copula1 copula2 copula3
-copula <- function(joint_sample) {
+#----------------------------------------------
+# Generate empirical copula from a joint sample
+copula <-
+function(joint_sample) {
   size  <- length(joint_sample$x)
   tmp_0 <- lapply(joint_sample, rank)
   tmp_1 <- lapply(
@@ -44,7 +47,48 @@ copula <- function(joint_sample) {
 }
 #---- END copula -------------------------------------------
 
-#---- BEGIN Movie ---------------------------------------
+#---- BEGIN rand_copula -----------------------------------
+#' Apply a different dependency structure to a joint
+#' random sample.
+#'
+#' \code{rand_copula} generates a joint random sample
+#' with the same marginals as the sample passed in as
+#' and the empirical copula also passed in.
+#'
+#' @param cop an empirical copua object
+#' @param sample an object of type \code{2dJointSample}
+#'
+#' @return 
+#'         The two list members are also named x and y and the list
+#'         itself is of class type \code{2dJointSample}.
+#'
+#' @return A jointsample with thesame copula as \code{cop} and 
+#'         the same marginals as \code{sample}
+#' 
+#' @export
+#' @examples
+#' fr <- frown(1000)
+#' sm <- smile(1000)
+#' rand_copula(copula(fr), sm)
+#'
+#' @aliases rand_copula1 rand_copula2 rand_copula3
+rand_copula <-
+function(cop, sample) {
+  size    <- length(cop$x)
+  ss      <- lapply(sample, sort)
+  s_cop_x <- ss$x[cop$x * (size + 1)]
+  s_cop_y <- ss$x[cop$y * (size + 1)]
+
+  me  <- list(
+              x = s_cop_x,
+              y = s_cop_y
+              )
+  class(me) <- append(class(me), "jointSample")
+  return(me)
+}
+#---- END rand_copula -------------------------------------
+
+#---- BEGIN Movie -----------------------------------------
 #' Make a movie from going from one plot to another one
 #' Generate the empirical copula from a joint random sample
 #'
@@ -234,47 +278,3 @@ function(
   return(me)
 }
 #---- END common_scale ------------------------------------
-
-#---- BEGIN my_cdf ----------------------------------------
-# Simple implementation of empirical cdf
-# Common Scale Factor Dependent Model
-# Perfect negative Dependency Copula
-# Perfect positive Dependency Copula
-# Make a movie from going from one plot to another one
-#' Generate the empirical copula from a joint random sample
-#'
-#' \code{copula} generates the empirical copula
-#' corresponding to the joint sample passed in
-#' as input
-#'
-#' @param x an object of type \code{2dJointSample}
-#'
-#' @return 
-#'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
-#'
-#' @return The empirical copula model of the joint sampleas a list
-#'         with two vectors of x and y of the samples coordinates.
-#'
-#' @export
-#' @examples
-#' my_cdf(frown(1000)$x)
-#'
-#' @aliases my_cdf1 my_cdf2 my_cdf3
-my_cdf <-
-function(x) {
-  sx    <- sort(x)
-  rl    <- rle(sx)
-
-  l     <- rl$lengths
-  ll    <- length(l)
-
-  my_x  <- rep(rl$values, l)
-  my_y  <- cumsum(rep(rep(1, ll), l))
-
-  list(
-       x = my_x, 
-       y = my_y
-       )
-}
-#---- END my_cdf ------------------------------------------
