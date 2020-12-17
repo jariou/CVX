@@ -5,7 +5,8 @@
 \alias{square1}
 \alias{square2}
 \alias{square3}
-\title{Simulate a Uniform distribution on a square}
+\title{Draws points uniformly distributed on the perimeter
+of a square}
 \usage{
 square(n)
 }
@@ -13,13 +14,14 @@ square(n)
 \item{n}{the size of the sample}
 }
 \value{
-A list with two vectors of x and y of the samples coordinates.
-The two list members are also named x and y and the list
-itself is of class type \code{2dJointSample}.
+A list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2dJointSample}.
 }
 \description{
 \code{square} simulates points in the plan as if they
-were distributed uniformly on the cpontour of a square.
+were distributed uniformly on the perimeter of a square.
 }
 \details{
 This and the list of functions below allows the
@@ -31,22 +33,11 @@ square(5000)
 
 }
 \seealso{
-\code{\link{frown}},\code{\link{smile}},
-\code{\link{circle}}, \code{\link{pizza}}, \code{\link{triangle}}.
-
-\code{\link{frown}} for products,
-\code{\link{cumsum}} for cumulative sums, and
-\code{\link{colSums}}/\code{\link{rowSums}}
-marginal sums over high-dimensional arrays.
-
-Other Two-dimensionalsampling functions.: 
-\code{\link{Gaussian}()},
-\code{\link{as.joint_sample}()},
+Other Two-dimensional sampling functions: 
 \code{\link{circle}()},
-\code{\link{copMix}()},
+\code{\link{frown}()},
 \code{\link{pizza}()},
-\code{\link{rMIErlang}()},
-\code{\link{rMIE}()},
+\code{\link{smile}()},
 \code{\link{triangle}()}
 }
-\concept{Two-dimensionalsampling functions.}
+\concept{Two-dimensional sampling functions}

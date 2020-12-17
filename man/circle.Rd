@@ -5,7 +5,7 @@
 \alias{circle1}
 \alias{circle2}
 \alias{circle3}
-\title{Simulate a Uniform distribution on a circle}
+\title{Draws points uniformly distributed on a circle arc}
 \usage{
 circle(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1)
 }
@@ -14,24 +14,27 @@ circle(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1)
 
 \item{r}{the radius of the circle, default to \code{1}}
 
-\item{x0}{x coordinate of the center of the circle, default to \code{0}}
-
-\item{y0}{y coordinate of the center of the circle, default to \code{0}}
-
-\item{from}{starting point of the arc as a fraction of the whole
-circumference starting from the rightmost point and
-drawing the circle in a counter-clockwise direction,
+\item{x0}{x coordinate of the center of the circle,
 default to \code{0}}
 
-\item{to}{ending point of the arc as a fraction of the whole
-circumference starting from the rightmost point and
-drawing the circle in a counter-clockwise direction,
+\item{y0}{y coordinate of the center of the circle,
 default to \code{0}}
+
+\item{from}{starting point of the arc as a fraction of
+the whole circumference starting from the
+rightmost point and drawing the circle in a
+counter-clockwise direction, default to \code{0}}
+
+\item{to}{ending point of the arc as a fraction of the
+whole circumference starting from the rightmost
+point and drawing the circle in a counter-
+clockwise direction, default to \code{0}}
 }
 \value{
-A list with two vectors of x and y of the samples coordinates.
-The two list members are also named x and y and the list
-itself is of class type \code{2dJointSample}.
+A list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2dJointSample}.
 }
 \description{
 \code{circle} simulates points in the plan as if they
@@ -47,17 +50,11 @@ circle(5000)
 
 }
 \seealso{
-\code{\link{frown}},\code{\link{smile}},
-\code{\link{triangle}}, \code{\link{pizza}}, \code{\link{square}}.
-
-Other Two-dimensionalsampling functions.: 
-\code{\link{Gaussian}()},
-\code{\link{as.joint_sample}()},
-\code{\link{copMix}()},
+Other Two-dimensional sampling functions: 
+\code{\link{frown}()},
 \code{\link{pizza}()},
-\code{\link{rMIErlang}()},
-\code{\link{rMIE}()},
+\code{\link{smile}()},
 \code{\link{square}()},
 \code{\link{triangle}()}
 }
-\concept{Two-dimensionalsampling functions.}
+\concept{Two-dimensional sampling functions}

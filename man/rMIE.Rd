@@ -35,13 +35,7 @@ wwights produces a mixture of copulas
 }
 \seealso{
 Other Two-dimensionalsampling functions.: 
-\code{\link{Gaussian}()},
-\code{\link{as.joint_sample}()},
-\code{\link{circle}()},
 \code{\link{copMix}()},
-\code{\link{pizza}()},
-\code{\link{rMIErlang}()},
-\code{\link{square}()},
-\code{\link{triangle}()}
+\code{\link{rMIErlang}()}
 }
 \concept{Two-dimensionalsampling functions.}

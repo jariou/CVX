@@ -7,7 +7,7 @@
 #'
 #' @param joint_sample an object of type \code{2dJointSample}
 #'
-#' @return 
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'
@@ -58,13 +58,13 @@ function(joint_sample) {
 #' @param cop an empirical copua object
 #' @param sample an object of type \code{2dJointSample}
 #'
-#' @return 
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'
-#' @return A jointsample with thesame copula as \code{cop} and 
+#' @return A jointsample with thesame copula as \code{cop} and
 #'         the same marginals as \code{sample}
-#' 
+#'
 #' @export
 #' @examples
 #' fr <- frown(1000)
@@ -100,7 +100,7 @@ function(cop, sample) {
 #' @param end_point an object of type \code{2dJointSample}
 #' @param steps an object of type \code{2dJointSample}
 #'
-#' @return 
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'
@@ -123,7 +123,7 @@ Movie <- function(start_point, end_point, steps) {
 
 
   for (i in 0:steps) {
-    plot.jointSample(
+    plot.2DJointSample(
                      list(
                           x = x_start + i / steps * x_diff,
                           y = y_start + i / steps * y_diff
@@ -144,7 +144,7 @@ Movie <- function(start_point, end_point, steps) {
 #'
 #' @param sample an object of type \code{2dJointSample}
 #'
-#' @return 
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'
@@ -172,7 +172,7 @@ CopMovie <- function(sample) {
 #'
 #' @param n an object of type \code{2dJointSample}
 #'
-#' @return 
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'
@@ -208,7 +208,7 @@ function(n) {
 #'
 #' @param n an object of type \code{2dJointSample}
 #'
-#' @return 
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'
@@ -246,8 +246,8 @@ function(n) {
 #' @param n an object of type \code{2dJointSample}
 #' @param scale_model an object of type \code{2dJointSample}
 #' @param margin_models an object of type \code{2dJointSample}
-#' 
-#' @return 
+#'
+#' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2dJointSample}.
 #'

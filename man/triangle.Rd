@@ -5,21 +5,18 @@
 \alias{triangle1}
 \alias{triangle2}
 \alias{triangle3}
-\title{Simulate a Uniform distribution on a triangle}
+\title{Draws points uniformly distributed inside a triangle}
 \usage{
-triangle(n, x0 = 0, y0 = 0)
+triangle(n)
 }
 \arguments{
 \item{n}{the size of the sample}
-
-\item{x0}{the size of the sample}
-
-\item{y0}{the size of the sample}
 }
 \value{
-A list with two vectors of x and y of the samples coordinates.
-The two list members are also named x and y and the list
-itself is of class type \code{2dJointSample}.
+A list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2dJointSample}.
 }
 \description{
 \code{triangle} simulates points in the plan as if they
@@ -35,17 +32,11 @@ triangle(5000)
 
 }
 \seealso{
-\code{\link{frown}},\code{\link{smile}},
-\code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
-
-Other Two-dimensionalsampling functions.: 
-\code{\link{Gaussian}()},
-\code{\link{as.joint_sample}()},
+Other Two-dimensional sampling functions: 
 \code{\link{circle}()},
-\code{\link{copMix}()},
+\code{\link{frown}()},
 \code{\link{pizza}()},
-\code{\link{rMIErlang}()},
-\code{\link{rMIE}()},
+\code{\link{smile}()},
 \code{\link{square}()}
 }
-\concept{Two-dimensionalsampling functions.}
+\concept{Two-dimensional sampling functions}

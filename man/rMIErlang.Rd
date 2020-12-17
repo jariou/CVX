@@ -31,13 +31,7 @@ distributions with fixed scale parameter.
 }
 \seealso{
 Other Two-dimensionalsampling functions.: 
-\code{\link{Gaussian}()},
-\code{\link{as.joint_sample}()},
-\code{\link{circle}()},
 \code{\link{copMix}()},
-\code{\link{pizza}()},
-\code{\link{rMIE}()},
-\code{\link{square}()},
-\code{\link{triangle}()}
+\code{\link{rMIE}()}
 }
 \concept{Two-dimensionalsampling functions.}

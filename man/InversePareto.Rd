@@ -38,10 +38,6 @@ InversePareto(c(1000, 3))
 Other Two-dimensional sampling functions.: 
 \code{\link{Degenerate}()},
 \code{\link{Exponential}()},
-\code{\link{Pareto}()},
-\code{\link{frown}()},
-\code{\link{plot.jointSample}()},
-\code{\link{print.jointSample}()},
-\code{\link{smile}()}
+\code{\link{Pareto}()}
 }
 \concept{Two-dimensional sampling functions.}

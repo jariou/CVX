@@ -5,7 +5,7 @@
 \alias{frown1}
 \alias{frown2}
 \alias{frown3}
-\title{Simulate a Uniform distribution on a frowning face}
+\title{Draws points uniformly distributed on a frowning face}
 \usage{
 frown(
   n,
@@ -21,29 +21,41 @@ frown(
 \arguments{
 \item{n}{the size of the sample}
 
-\item{x0}{x coordinate of the center of the head, default to \code{0}}
+\item{x0}{x coordinate of the center of the head,
+default to \code{0}}
 
-\item{y0}{y coordinate of the center of the head, default to \code{0}}
+\item{y0}{y coordinate of the center of the head,
+default to \code{0}}
 
-\item{main_radius}{the radius of the head, default to \code{1}}
+\item{main_radius}{the radius of the head, default
+to \code{1}}
 
-\item{eye_radius}{the radius of the eye, default to \code{0.25}}
+\item{eye_radius}{the radius of the eye, default
+to \code{0.25}}
 
-\item{mouth_radius}{the radius of the mouth, default to \code{0.7}}
+\item{mouth_radius}{the radius of the mouth,
+default to \code{0.7}}
 
-\item{mouth_start}{the radius of the mouth, default to \code{0.05}}
+\item{mouth_start}{number between \code{0} and \code{1}
+representing the fraction of \code{(2xPi)} angle
+at which the mouth stroke begins, default to
+\code{0.05}}
 
-\item{mouth_end}{the radius of the mouth, default to \code{0.45}}
+\item{mouth_end}{number between \code{0} and \code{1}
+representing the fraction of \code{(2Pi)} angle
+at which the mouth stroke ends, default to
+\code{0.45}}
 }
 \value{
-a list with two vectors of x and y of the samples coordinates.
-The two list members are also named x and y and the list
-itself is of class type \code{2dJointSample}.
+a list with two vectors of x and y of the
+samples coordinates. The two list members
+are also named x and y and the list itself
+is of class type \code{2dJointSample}.
 }
 \description{
 \code{frown} simulates points in the plan
 as if they were distributed uniformly on
-a drawing of a frowning face.
+the drawing of a frowning face.
 }
 \details{
 This and the list of functions below allows the
@@ -55,16 +67,11 @@ frown(5000)
 
 }
 \seealso{
-\code{\link{triangle}},\code{\link{smile}},
-\code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
-
-Other Two-dimensional sampling functions.: 
-\code{\link{Degenerate}()},
-\code{\link{Exponential}()},
-\code{\link{InversePareto}()},
-\code{\link{Pareto}()},
-\code{\link{plot.jointSample}()},
-\code{\link{print.jointSample}()},
-\code{\link{smile}()}
+Other Two-dimensional sampling functions: 
+\code{\link{circle}()},
+\code{\link{pizza}()},
+\code{\link{smile}()},
+\code{\link{square}()},
+\code{\link{triangle}()}
 }
-\concept{Two-dimensional sampling functions.}
+\concept{Two-dimensional sampling functions}

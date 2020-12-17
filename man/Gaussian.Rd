@@ -28,15 +28,3 @@ x and y and the list itself is of class type
 \code{Gaussian} simulates points in the plan as if they
 were distributed as joint Normal random variables.
 }
-\seealso{
-Other Two-dimensionalsampling functions.: 
-\code{\link{as.joint_sample}()},
-\code{\link{circle}()},
-\code{\link{copMix}()},
-\code{\link{pizza}()},
-\code{\link{rMIErlang}()},
-\code{\link{rMIE}()},
-\code{\link{square}()},
-\code{\link{triangle}()}
-}
-\concept{Two-dimensionalsampling functions.}

@@ -39,10 +39,6 @@ Degenerate(c(1000))
 Other Two-dimensional sampling functions.: 
 \code{\link{Exponential}()},
 \code{\link{InversePareto}()},
-\code{\link{Pareto}()},
-\code{\link{frown}()},
-\code{\link{plot.jointSample}()},
-\code{\link{print.jointSample}()},
-\code{\link{smile}()}
+\code{\link{Pareto}()}
 }
 \concept{Two-dimensional sampling functions.}

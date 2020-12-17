@@ -30,13 +30,7 @@ Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36)) )
 }
 \seealso{
 Other Two-dimensionalsampling functions.: 
-\code{\link{Gaussian}()},
-\code{\link{as.joint_sample}()},
-\code{\link{circle}()},
-\code{\link{pizza}()},
 \code{\link{rMIErlang}()},
-\code{\link{rMIE}()},
-\code{\link{square}()},
-\code{\link{triangle}()}
+\code{\link{rMIE}()}
 }
 \concept{Two-dimensionalsampling functions.}

@@ -5,7 +5,7 @@
 \alias{smile1}
 \alias{smile2}
 \alias{smile3}
-\title{Simulate a Uniform distribution on a smiley face}
+\title{Draws points uniformly distributed on a smiling face}
 \usage{
 smile(
   n,
@@ -21,24 +21,36 @@ smile(
 \arguments{
 \item{n}{the size of the sample}
 
-\item{x0}{x coordinate of the center of the head, default to \code{0}}
+\item{x0}{x coordinate of the center of the head,
+default to \code{0}}
 
-\item{y0}{y coordinate of the center of the head, default to \code{0}}
+\item{y0}{y coordinate of the center of the head,
+default to \code{0}}
 
-\item{main_radius}{the radius of the head, default to \code{1}}
+\item{main_radius}{the radius of the head, default
+to \code{1}}
 
-\item{eye_radius}{the radius of the eye, default to \code{0.25}}
+\item{eye_radius}{the radius of the eye, default to
+\code{0.25}}
 
-\item{mouth_radius}{the radius of the mouth, default to \code{0.7}}
+\item{mouth_radius}{the radius of the mouth, default
+to \code{0.7}}
 
-\item{mouth_start}{the radius of the mouth, default to \code{0.55}}
+\item{mouth_start}{number between \code{0} and \code{1}
+representing the fraction of \code{(2xPi)} angle
+at which the mouth stroke begins, default to
+\code{0.55}}
 
-\item{mouth_end}{the radius of the mouth, default to \code{0.95}}
+\item{mouth_end}{number between \code{0} and \code{1}
+representing the fraction of \code{(2Pi)} angle
+at which the mouth stroke ends, default to
+\code{0.95}}
 }
 \value{
-a list with two vectors of x and y of the samples coordinates.
-The two list members are also named x and y and the list
-itself is of class type \code{2dJointSample}.
+a list with two vectors of x and y of the
+samples coordinates. The two list members
+are also named x and y and the list itself
+is of class type \code{2dJointSample}.
 }
 \description{
 \code{smile} simulates points in the plan
@@ -55,16 +67,11 @@ smile(5000)
 
 }
 \seealso{
-\code{\link{frown}},\code{\link{triangle}},
-\code{\link{circle}}, \code{\link{pizza}}, \code{\link{square}}.
-
-Other Two-dimensional sampling functions.: 
-\code{\link{Degenerate}()},
-\code{\link{Exponential}()},
-\code{\link{InversePareto}()},
-\code{\link{Pareto}()},
+Other Two-dimensional sampling functions: 
+\code{\link{circle}()},
 \code{\link{frown}()},
-\code{\link{plot.jointSample}()},
-\code{\link{print.jointSample}()}
+\code{\link{pizza}()},
+\code{\link{square}()},
+\code{\link{triangle}()}
 }
-\concept{Two-dimensional sampling functions.}
+\concept{Two-dimensional sampling functions}
