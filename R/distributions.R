@@ -10,11 +10,11 @@
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param x an object of type \code{2dJointSample}
+#' @param x an object of type \code{2DSample}
 #'
 #' @return 
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sample as a list
 #'         with two vectors of x and y of the samples coordinates.
@@ -57,7 +57,7 @@ function(x) {
 #'
 #' @return a list with two vectors of x and y of the samples coordinates.
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -114,7 +114,7 @@ function(params) {
 #'
 #' @return a list with two vectors of x and y of the samples coordinates.
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -172,7 +172,7 @@ function(params) {
 #'
 #' @return a list with two vectors of x and y of the samples coordinates.
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -230,7 +230,7 @@ function(params) {
 #'
 #' @return a list with two vectors of x and y of the samples coordinates.
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -302,7 +302,7 @@ function(params) {
 #'
 #' @return a list with two vectors of x and y of the samples coordinates.
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples

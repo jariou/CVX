@@ -7,11 +7,12 @@
 \description{
 The CVX package provides three categories of functions:
 \itemize{
-\item functions to easily generate 2-dimensionaljoint samples
-with markedly different dependency structures
+\item functions to easily generate 2-dimensional joint
+samples with markedly different dependency structures
 \item functions to generate copulas from joint samples
 as well as joint samples from copulas
-\item functions to plot and toanimate copulas or joint samples
+\item functions to plot and toanimate copulas or joint
+samples
 }
 }
 \section{Simple two dimensional joint sample models}{

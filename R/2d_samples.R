@@ -32,7 +32,7 @@
 #' @return a list with two vectors of x and y of the
 #'         samples coordinates. The two list members
 #'         are also named x and y and the list itself
-#'         is of class type \code{2dJointSample}.
+#'         is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -76,10 +76,20 @@ function(
                          mouth_end
                          )
   me            <- list(
-                 x = x0 + c(main$x, left_eye$x, right_eye$x, mouth$x),
-                 y = y0 + c(main$y, left_eye$y, right_eye$y, mouth$y)
+                 x = x0 + c(
+                            main$x, 
+                            left_eye$x, 
+                            right_eye$x, 
+                            mouth$x
+                            ),
+                 y = y0 + c(
+                            main$y, 
+                            left_eye$y, 
+                            right_eye$y, 
+                            mouth$y
+                            )
                  )
-  class(me) <- append(class(me), "2DJointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #### END frown ############################################
@@ -118,7 +128,7 @@ function(
 #' @return a list with two vectors of x and y of the
 #'         samples coordinates. The two list members
 #'         are also named x and y and the list itself
-#'         is of class type \code{2dJointSample}.
+#'         is of class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -166,7 +176,7 @@ function(
                 x = x0 + c(main$x, left_eye$x, right_eye$x, mouth$x),
                 y = y0 + c(main$y, left_eye$y, right_eye$y, mouth$y)
                 )
-  class(me) <- append(class(me), "2DJointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #### END smile ############################################
@@ -199,7 +209,7 @@ function(
 #' @return A list with two vectors of x and y of the
 #'         samples coordinates. The two list members are
 #'         also named x and y and the list itself is of
-#'         class type \code{2dJointSample}.
+#'         class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -224,7 +234,7 @@ circle <- function(
                 x = x_pos + x0,
                 y = y_pos + y0
                 )
-  class(me) <- append(class(me), "2DJointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #### BEGIN circle #########################################
@@ -260,7 +270,7 @@ circle <- function(
 #' @return A list with two vectors of x and y of the
 #'         samples coordinates. The two list members are
 #'         also named x and y and the list itself is of
-#'         class type \code{2dJointSample}.
+#'         class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -293,7 +303,7 @@ function(
              x = x_pos + x0,
              y = y_pos + y0
              )
-  class(me) <- append(class(me), "2DJointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #### END pizza ############################################
@@ -314,7 +324,7 @@ function(
 #' @return A list with two vectors of x and y of the
 #'         samples coordinates. The two list members are
 #'         also named x and y and the list itself is of
-#'         class type \code{2dJointSample}.
+#'         class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -337,7 +347,7 @@ function(n) {
              x = x,
              y = y
              )
-  class(me) <- append(class(me), "2DJointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #### END square ###########################################
@@ -357,7 +367,7 @@ function(n) {
 #' @return A list with two vectors of x and y of the
 #'         samples coordinates. The two list members are
 #'         also named x and y and the list itself is of
-#'         class type \code{2dJointSample}.
+#'         class type \code{2DSample}.
 #'
 #' @export
 #' @examples
@@ -374,12 +384,12 @@ function(n) {
              x = y / 2 + runif(n) * (1 - y),
              y = y
              )
-  class(me) <- append(class(me), "2DJointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #### END triangle #########################################
 
-#---- BEGIN Gaussian --------------------------------------
+#### BEGIN Gaussian #######################################
 #' Simulate a joint normal distribution
 #'
 #' \code{Gaussian} simulates points in the plan as if they
@@ -387,50 +397,61 @@ function(n) {
 #'
 #' @param n the size of the sample
 #' @param mu  the vector of means
-#' @param sigmasq the covariance matrix
-#' @param rho correlation coefficient
+#' @param sigma the covariance matrix
 #'
 #' @return A list with two vectors of x and y of the samples
 #'         coordinates. The two list members are also named
 #'         x and y and the list itself is of class type
-#'         \code{2dJointSample}.
+#'         \code{2DSample}.
 #'
 #' @export
-# @examples
-# Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36)) )
+#' @examples
+#' s2 <- matrix(c(25, 8, 8, 36), 2)
+#' mu <- c(3,4)
+#' Gaussian(5000, mu, s2 )
 #'
 #' @aliases Gaussian1 Gaussian2 Gaussian3
 Gaussian <-
-function(n, mu, sigmasq, rho) {
-  return(0)
+function(n, mu, sigma) {
+  sigma_sq_rt <- t(chol(sigma))
+  x_val <- matrix(rnorm(2 * n), 2, n)
+  me <- t(sigma_sq_rt %*% x_val) +
+          matrix(
+                 rep(mu, n),
+                 byrow = TRUE,
+                 ncol = 2
+                 )
+  class(me) <- append(class(me), "2DSample")
+  return(me)
 }
-#---- END Gaussian ------------------------------------------
+#### END Gaussian #########################################
 
-#### BEGIN plot.2DJointSample #############################
+#### BEGIN plot.2DSample ##################################
 #' Plot a two-dimensional joint sample
 #'
-#' \code{plot.2DJointSample} plots points in the plan
-#' from objects of type \code{2DJointSample}
+#' \code{plot.2DSample} plots points in the plan
+#' from objects of type \code{2DSample}
 #'
-#' @param x the size of the sample
+#' @param x the sampleitself
 #' @param pch the size of the sample
 #' @param cex the size of the sample
-#' @param all the size of the sample
-#' @param ... the size of the sample
+#' @param all plot sample plus marginals and copula,
+#'            \code{TRUE} or \code{FALSE}
+#' @param ... optional parameters
 #'
 #' @return a list with two vectors of x and y of the
 #'         samples coordinates. The two list members are
 #'         also named x and y and the list itself is of
-#'         class type \code{2dJointSample}.
+#'         class type \code{2DSample}.
 #'
 #' @export
 #' @examples
 #' plot(frown(5000))
 #'
-#' @family Methods for 2dJointSample class
+#' @family Methods for 2DSample class
 #'
-#' @aliases plot.2DJointSample1 plot.2DJointSample2 plot.2DJointSample3
-plot.2DJointSample <-
+#' @aliases plot.2DSample1 plot.2DSample2 plot.2DSample3
+plot.2DSample <-
 function(
          x,
          pch = 20,
@@ -506,73 +527,66 @@ function(
                      )
   }
 }
-#### END plot.2DJointSample ###############################
+#### END plot.2DSample ####################################
 
-#---- BEGIN print.2DJointSample ---------------------------
+#### BEGIN print.2DSample #################################
 #' Print a two-dimensional joint sample
-#' 
-#' \code{print.2DJointSample} simulates points in the plan
-#' as if they were distributed uniformly on
-#' a drawing of a frowning face.
 #'
-#' This and the list of functions below allows the
-#' user to quickly generate two-dimensional samples
-#' with very different dependency structures.
+#' \code{print.2DSample} print method for objects of
+#' class \code{2DSample}.
 #'
-#' @param x the size of the sample
-#' @param ... the size of the sample
 #'
-#' @return a list with two vectors of x and y of the samples coordinates.
-#'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#' @param x the sample itself
+#' @param ... optional parameters
 #'
 #' @export
+#'
 #' @examples
 #' print(frown(5000))
 #'
-#' @family Methods for 2dJointSample class
+#' @family Methods for 2DSample class
 #'
-#' @aliases print.jointSample1 print.jointSample2 print.jointSample3
-print.2DJointSample <-
+#' @aliases print.2DSample1 print.2DSample2 print.2DSample3
+print.2DSample <-
 function(x, ...) {
-  cat("Joint Sample\n")
+  cat("2D Joint Sample\n")
   NextMethod("print", x)
   invisible(x)
 }
-#---- END print.2DJointSample -------------------------------
+#### END print.2DSample ###################################
 
-#---- BEGIN as.2DJointSample -------------------------------
-#' Transform data.frame into an object of type jointSample
+#### BEGIN as.2DSample ####################################
+#' Transform data.frame into an object of type 2DSample
 #'
-#' \code{as.2DJointSample} takes a dataframe and extracts 2
+#' \code{as.2DSample} takes a dataframe and extracts 2
 #' columns of it and represent those as a two-dimensional
 #' joint sample.
 #'
-#' This and the list of functions below allows the
-#' user to quickly generate two-dimensional samples
-#' with very different dependency structures.
-#'
 #' @param df a dataframe
-#' @param dim1 the first column
-#' @param dim2 the second column
+#' @param dim1 the first column index as a number or name
+#'             as a string
+#' @param dim2 the second column index as a number or name
+#'             as a string
 #'
-#' @return A list with two vectors of x and y of the samples
-#'         coordinates. The two list members are also named
-#'         x and y and the list itself is of class type
-#'         \code{2dJointSample}.
+#' @return A list with two vectors of x and y of the
+#'         samples coordinates. The two list members are
+#'         also named x and y and the list itself is of
+#'         class type \code{2DSample}.
+#'
+#' @family Methods for 2dSample class
 #'
 #' @export
 # @examples
-# as.2DJointSample(as.data.frame(frown(3000), y, x)
+# as.2DSample(as.data.frame(frown(3000), 2, 1)
 #'
-#' @aliases as.2DJointSample1 as.2DJointSample2 as.2DJointSample3
-as.2DJointSample <-
+#' @aliases as.2DSample1 as.2DSample2 as.2DSample3
+as.2DSample <-
 function(df, dim1, dim2) {
   me <- list(
-             x = df[names(df)[dim1]],
-             y = df[names(df)[dim2]]
+             x = df[[dim1]],
+             y = df[[dim2]]
              )
-  class(me) <- "jointSample"
+  class(me) <- "2DSample"
   me
 }
-#---- END as.2DJointSample ---------------------------------
+#### END as.2DSample ######################################

@@ -14,7 +14,7 @@
 #'
 #' @export
 #' @examples
-#' Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36)) )
+#' Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36), 2) )
 #'
 #' @family Two-dimensionalsampling functions.
 #'
@@ -58,9 +58,6 @@ function(copulas, weights) {
 #'         \code{2dJointSample}.
 #'
 #' @export
-# @examples
-# Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36)) )
-#'
 #' @family Two-dimensionalsampling functions.
 #'
 #' @aliases rMIE1 rMIE2 rMIE3

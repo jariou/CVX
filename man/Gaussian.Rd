@@ -7,24 +7,28 @@
 \alias{Gaussian3}
 \title{Simulate a joint normal distribution}
 \usage{
-Gaussian(n, mu, sigmasq, rho)
+Gaussian(n, mu, sigma)
 }
 \arguments{
 \item{n}{the size of the sample}
 
 \item{mu}{the vector of means}
 
-\item{sigmasq}{the covariance matrix}
-
-\item{rho}{correlation coefficient}
+\item{sigma}{the covariance matrix}
 }
 \value{
 A list with two vectors of x and y of the samples
 coordinates. The two list members are also named
 x and y and the list itself is of class type
-\code{2dJointSample}.
+\code{2DSample}.
 }
 \description{
 \code{Gaussian} simulates points in the plan as if they
 were distributed as joint Normal random variables.
+}
+\examples{
+s2 <- matrix(c(25, 8, 8, 36), 2)
+mu <- c(3,4)
+Gaussian(5000, mu, s2 )
+
 }

@@ -15,7 +15,7 @@ Exponential(params)
 \value{
 a list with two vectors of x and y of the samples coordinates.
 The two list members are also named x and y and the list
-itself is of class type \code{2dJointSample}.
+itself is of class type \code{2DSample}.
 }
 \description{
 \code{Exponential} simulates points in the plan

@@ -1,11 +1,13 @@
+#----------------------------------------------------------
 #' CVX: A package for Copula Visual eXploration
 #'
 #' The CVX package provides three categories of functions:
-#' - functions to easily generate 2-dimensionaljoint samples 
-#' with markedly different dependency structures
+#' - functions to easily generate 2-dimensional joint
+#' samples with markedly different dependency structures
 #' - functions to generate copulas from joint samples
 #' as well as joint samples from copulas
-#' - functions to plot and toanimate copulas or joint samples 
+#' - functions to plot and toanimate copulas or joint
+#' samples
 #'
 #' @section Simple two dimensional joint sample models:
 #'
@@ -33,8 +35,7 @@
 #'
 #' @import stats
 #' @import graphics
-#' 
-#' 
+#'
 #' @docType package
 #' @name CVX
 NULL

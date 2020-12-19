@@ -25,7 +25,7 @@ x and y and the list itself is of class type
 wwights produces a mixture of copulas
 }
 \examples{
-Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36)) )
+Gaussian(5000, c(3,4), matrix(c(25, 8, 8, 36), 2) )
 
 }
 \seealso{

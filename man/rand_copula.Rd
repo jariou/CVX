@@ -13,11 +13,11 @@ rand_copula(cop, sample)
 \arguments{
 \item{cop}{an empirical copua object}
 
-\item{sample}{an object of type \code{2dJointSample}}
+\item{sample}{an object of type \code{2DSample}}
 }
 \value{
 \preformatted{    The two list members are also named x and y and the list
-    itself is of class type \code{2dJointSample}.
+    itself is of class type \code{2DSample}.
 }
 
 A jointsample with thesame copula as \code{cop} and

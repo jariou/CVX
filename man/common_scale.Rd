@@ -14,15 +14,15 @@ common_scale(
 )
 }
 \arguments{
-\item{n}{an object of type \code{2dJointSample}}
+\item{n}{an object of type \code{2DSample}}
 
-\item{scale_model}{an object of type \code{2dJointSample}}
+\item{scale_model}{an object of type \code{2DSample}}
 
-\item{margin_models}{an object of type \code{2dJointSample}}
+\item{margin_models}{an object of type \code{2DSample}}
 }
 \value{
 \preformatted{    The two list members are also named x and y and the list
-    itself is of class type \code{2dJointSample}.
+    itself is of class type \code{2DSample}.
 }
 
 The empirical copula model of the joint sampleas a list

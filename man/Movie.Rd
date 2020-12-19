@@ -11,15 +11,15 @@ Generate the empirical copula from a joint random sample}
 Movie(start_point, end_point, steps)
 }
 \arguments{
-\item{start_point}{an object of type \code{2dJointSample}}
+\item{start_point}{an object of type \code{2DSample}}
 
-\item{end_point}{an object of type \code{2dJointSample}}
+\item{end_point}{an object of type \code{2DSample}}
 
-\item{steps}{an object of type \code{2dJointSample}}
+\item{steps}{an object of type \code{2DSample}}
 }
 \value{
 \preformatted{    The two list members are also named x and y and the list
-    itself is of class type \code{2dJointSample}.
+    itself is of class type \code{2DSample}.
 }
 
 The empirical copula model of the joint sampleas a list

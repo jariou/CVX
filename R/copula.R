@@ -5,11 +5,11 @@
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param joint_sample an object of type \code{2dJointSample}
+#' @param joint_sample an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sampleas a list
 #'         with two vectors of x and y of the samples coordinates.
@@ -56,11 +56,11 @@ function(joint_sample) {
 #' and the empirical copula also passed in.
 #'
 #' @param cop an empirical copua object
-#' @param sample an object of type \code{2dJointSample}
+#' @param sample an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return A jointsample with thesame copula as \code{cop} and
 #'         the same marginals as \code{sample}
@@ -96,13 +96,13 @@ function(cop, sample) {
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param start_point an object of type \code{2dJointSample}
-#' @param end_point an object of type \code{2dJointSample}
-#' @param steps an object of type \code{2dJointSample}
+#' @param start_point an object of type \code{2DSample}
+#' @param end_point an object of type \code{2DSample}
+#' @param steps an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sampleas a list
 #'         with two vectors of x and y of the samples coordinates.
@@ -123,7 +123,7 @@ Movie <- function(start_point, end_point, steps) {
 
 
   for (i in 0:steps) {
-    plot.2DJointSample(
+    plot.2DSample(
                      list(
                           x = x_start + i / steps * x_diff,
                           y = y_start + i / steps * y_diff
@@ -142,11 +142,11 @@ Movie <- function(start_point, end_point, steps) {
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param sample an object of type \code{2dJointSample}
+#' @param sample an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sampleas a list
 #'         with two vectors of x and y of the samples coordinates.
@@ -170,11 +170,11 @@ CopMovie <- function(sample) {
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param n an object of type \code{2dJointSample}
+#' @param n an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sampleas a list
 #'         with two vectors of x and y of the samples coordinates.
@@ -206,11 +206,11 @@ function(n) {
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param n an object of type \code{2dJointSample}
+#' @param n an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sampleas a list
 #'         with two vectors of x and y of the samples coordinates.
@@ -243,13 +243,13 @@ function(n) {
 #' corresponding to the joint sample passed in
 #' as input
 #'
-#' @param n an object of type \code{2dJointSample}
-#' @param scale_model an object of type \code{2dJointSample}
-#' @param margin_models an object of type \code{2dJointSample}
+#' @param n an object of type \code{2DSample}
+#' @param scale_model an object of type \code{2DSample}
+#' @param margin_models an object of type \code{2DSample}
 #'
 #' @return
 #'         The two list members are also named x and y and the list
-#'         itself is of class type \code{2dJointSample}.
+#'         itself is of class type \code{2DSample}.
 #'
 #' @return The empirical copula model of the joint sampleas a list
 #'         with two vectors of x and y of the samples coordinates.
