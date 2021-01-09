@@ -9,6 +9,8 @@
 of a square}
 \usage{
 square(n)
+
+square(n)
 }
 \arguments{
 \item{n}{the size of the sample}
@@ -18,8 +20,16 @@ A list with two vectors of x and y of the
 samples coordinates. The two list members are
 also named x and y and the list itself is of
 class type \code{2DSample}.
+
+A list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2DSample}.
 }
 \description{
+\code{square} simulates points in the plan as if they
+were distributed uniformly on the perimeter of a square.
+
 \code{square} simulates points in the plan as if they
 were distributed uniformly on the perimeter of a square.
 }
@@ -27,12 +37,25 @@ were distributed uniformly on the perimeter of a square.
 This and the list of functions below allows the
 user to quickly generate two-dimensional samples
 with very different dependency structures.
+
+This and the list of functions below allows the
+user to quickly generate two-dimensional samples
+with very different dependency structures.
 }
 \examples{
 square(5000)
 
+square(5000)
+
 }
 \seealso{
+Other Two-dimensional sampling functions: 
+\code{\link{circle}()},
+\code{\link{frown}()},
+\code{\link{pizza}()},
+\code{\link{smile}()},
+\code{\link{triangle}()}
+
 Other Two-dimensional sampling functions: 
 \code{\link{circle}()},
 \code{\link{frown}()},

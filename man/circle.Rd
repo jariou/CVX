@@ -8,6 +8,8 @@
 \title{Draws points uniformly distributed on a circle arc}
 \usage{
 circle(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1)
+
+circle(n, r = 1, x0 = 0, y0 = 0, from = 0, to = 1)
 }
 \arguments{
 \item{n}{the size of the sample}
@@ -35,8 +37,16 @@ A list with two vectors of x and y of the
 samples coordinates. The two list members are
 also named x and y and the list itself is of
 class type \code{2DSample}.
+
+A list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2DSample}.
 }
 \description{
+\code{circle} simulates points in the plan as if they
+were distributed uniformly on a circle arc.
+
 \code{circle} simulates points in the plan as if they
 were distributed uniformly on a circle arc.
 }
@@ -44,12 +54,25 @@ were distributed uniformly on a circle arc.
 This and the list of functions below allows the
 user to quickly generate two-dimensional samples
 with very different dependency structures.
+
+This and the list of functions below allows the
+user to quickly generate two-dimensional samples
+with very different dependency structures.
 }
 \examples{
 circle(5000)
 
+circle(5000)
+
 }
 \seealso{
+Other Two-dimensional sampling functions: 
+\code{\link{frown}()},
+\code{\link{pizza}()},
+\code{\link{smile}()},
+\code{\link{square}()},
+\code{\link{triangle}()}
+
 Other Two-dimensional sampling functions: 
 \code{\link{frown}()},
 \code{\link{pizza}()},

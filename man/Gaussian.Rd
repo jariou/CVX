@@ -8,6 +8,8 @@
 \title{Simulate a joint normal distribution}
 \usage{
 Gaussian(n, mu, sigma)
+
+Gaussian(n, mu, sigma)
 }
 \arguments{
 \item{n}{the size of the sample}
@@ -21,12 +23,24 @@ A list with two vectors of x and y of the samples
 coordinates. The two list members are also named
 x and y and the list itself is of class type
 \code{2DSample}.
+
+A list with two vectors of x and y of the samples
+coordinates. The two list members are also named
+x and y and the list itself is of class type
+\code{2DSample}.
 }
 \description{
 \code{Gaussian} simulates points in the plan as if they
 were distributed as joint Normal random variables.
+
+\code{Gaussian} simulates points in the plan as if they
+were distributed as joint Normal random variables.
 }
 \examples{
+s2 <- matrix(c(25, 8, 8, 36), 2)
+mu <- c(3,4)
+Gaussian(5000, mu, s2 )
+
 s2 <- matrix(c(25, 8, 8, 36), 2)
 mu <- c(3,4)
 Gaussian(5000, mu, s2 )

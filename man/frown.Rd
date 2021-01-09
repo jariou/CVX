@@ -17,6 +17,17 @@ frown(
   mouth_start = 0.05,
   mouth_end = 0.45
 )
+
+frown(
+  n,
+  x0 = 0,
+  y0 = 0,
+  main_radius = 1,
+  eye_radius = 0.25,
+  mouth_radius = 0.7,
+  mouth_start = 0.05,
+  mouth_end = 0.45
+)
 }
 \arguments{
 \item{n}{the size of the sample}
@@ -51,8 +62,17 @@ a list with two vectors of x and y of the
 samples coordinates. The two list members
 are also named x and y and the list itself
 is of class type \code{2DSample}.
+
+a list with two vectors of x and y of the
+samples coordinates. The two list members
+are also named x and y and the list itself
+is of class type \code{2DSample}.
 }
 \description{
+\code{frown} simulates points in the plan
+as if they were distributed uniformly on
+the drawing of a frowning face.
+
 \code{frown} simulates points in the plan
 as if they were distributed uniformly on
 the drawing of a frowning face.
@@ -61,12 +81,25 @@ the drawing of a frowning face.
 This and the list of functions below allows the
 user to quickly generate two-dimensional samples
 with very different dependency structures.
+
+This and the list of functions below allows the
+user to quickly generate two-dimensional samples
+with very different dependency structures.
 }
 \examples{
 frown(5000)
 
+frown(5000)
+
 }
 \seealso{
+Other Two-dimensional sampling functions: 
+\code{\link{circle}()},
+\code{\link{pizza}()},
+\code{\link{smile}()},
+\code{\link{square}()},
+\code{\link{triangle}()}
+
 Other Two-dimensional sampling functions: 
 \code{\link{circle}()},
 \code{\link{pizza}()},

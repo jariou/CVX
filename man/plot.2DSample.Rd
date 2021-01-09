@@ -7,7 +7,9 @@
 \alias{plot.2DSample3}
 \title{Plot a two-dimensional joint sample}
 \usage{
-\method{plot}{`2DSample`}(x, pch = 20, cex = 0.1, all = F, ...)
+\method{plot}{`2DSample`}(x, pch = 20, cex = 0.1, all = FALSE, ...)
+
+\method{plot}{`2DSample`}(x, pch = 20, cex = 0.1, all = FALSE, ...)
 }
 \arguments{
 \item{x}{the sampleitself}
@@ -26,16 +28,29 @@ a list with two vectors of x and y of the
 samples coordinates. The two list members are
 also named x and y and the list itself is of
 class type \code{2DSample}.
+
+a list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2DSample}.
 }
 \description{
+\code{plot.2DSample} plots points in the plan
+from objects of type \code{2DSample}
+
 \code{plot.2DSample} plots points in the plan
 from objects of type \code{2DSample}
 }
 \examples{
 plot(frown(5000))
 
+plot(frown(5000))
+
 }
 \seealso{
+Other Methods for 2DSample class: 
+\code{\link{print.2DSample}()}
+
 Other Methods for 2DSample class: 
 \code{\link{print.2DSample}()}
 }

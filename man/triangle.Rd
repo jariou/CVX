@@ -8,6 +8,8 @@
 \title{Draws points uniformly distributed inside a triangle}
 \usage{
 triangle(n)
+
+triangle(n)
 }
 \arguments{
 \item{n}{the size of the sample}
@@ -17,8 +19,16 @@ A list with two vectors of x and y of the
 samples coordinates. The two list members are
 also named x and y and the list itself is of
 class type \code{2DSample}.
+
+A list with two vectors of x and y of the
+samples coordinates. The two list members are
+also named x and y and the list itself is of
+class type \code{2DSample}.
 }
 \description{
+\code{triangle} simulates points in the plan as if they
+were distributed uniformly on the inside of a triangle.
+
 \code{triangle} simulates points in the plan as if they
 were distributed uniformly on the inside of a triangle.
 }
@@ -26,12 +36,25 @@ were distributed uniformly on the inside of a triangle.
 This and the list of functions below allows the
 user to quickly generate two-dimensional samples
 with very different dependency structures.
+
+This and the list of functions below allows the
+user to quickly generate two-dimensional samples
+with very different dependency structures.
 }
 \examples{
 triangle(5000)
 
+triangle(5000)
+
 }
 \seealso{
+Other Two-dimensional sampling functions: 
+\code{\link{circle}()},
+\code{\link{frown}()},
+\code{\link{pizza}()},
+\code{\link{smile}()},
+\code{\link{square}()}
+
 Other Two-dimensional sampling functions: 
 \code{\link{circle}()},
 \code{\link{frown}()},

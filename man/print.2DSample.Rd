@@ -8,6 +8,8 @@
 \title{Print a two-dimensional joint sample}
 \usage{
 \method{print}{`2DSample`}(x, ...)
+
+\method{print}{`2DSample`}(x, ...)
 }
 \arguments{
 \item{x}{the sample itself}
@@ -17,12 +19,20 @@
 \description{
 \code{print.2DSample} print method for objects of
 class \code{2DSample}.
+
+\code{print.2DSample} print method for objects of
+class \code{2DSample}.
 }
 \examples{
 print(frown(5000))
 
+print(frown(5000))
+
 }
 \seealso{
+Other Methods for 2DSample class: 
+\code{\link{plot.2DSample}()}
+
 Other Methods for 2DSample class: 
 \code{\link{plot.2DSample}()}
 }

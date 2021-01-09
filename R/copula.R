@@ -23,9 +23,10 @@
 # Generate empirical copula from a joint sample
 copula <-
 function(joint_sample) {
-  size  <- length(joint_sample$x)
-  tmp_0 <- lapply(joint_sample, rank)
-  tmp_1 <- lapply(
+  size   <- length(joint_sample$x)
+  tmp_00 <- lapply(joint_sample, randomize)
+  tmp_0  <- lapply(tmp_00, rank)
+  tmp_1  <- lapply(
                   tmp_0,
                   "[",
                   order(joint_sample$x)
@@ -83,7 +84,7 @@ function(cop, sample) {
               x = s_cop_x,
               y = s_cop_y
               )
-  class(me) <- append(class(me), "jointSample")
+  class(me) <- append(class(me), "2DSample")
   return(me)
 }
 #---- END rand_copula -------------------------------------
@@ -134,6 +135,31 @@ Movie <- function(start_point, end_point, steps) {
 }
 #---- END Movie -------------------------------------------
 
+#---- BEGIN randomize --------------------------------------
+# Make a movie from going from one plot to another one
+#' Generate the empirical copula from a joint random sample
+#'
+#' \code{copula} generates the empirical copula
+#' corresponding to the joint sample passed in
+#' as input
+#'
+#' @param x vector for which values are randomized
+#'
+#' @return
+#'         The two list members are also named x and y and the list
+#'         itself is of class type \code{2DSample}.
+#'
+#' @export
+#' @examples
+#' randomize(runif(100))
+#'
+#' @aliases randomize1 randomize2 randomize3
+randomize <- function(x) {
+  v <- var(x)
+  x + rnorm(length(x), 0, sqrt(v) / 10000)
+}
+#---- END randomize ---------------------------------------
+
 #---- BEGIN CopMovie --------------------------------------
 # Make a movie from going from one plot to another one
 #' Generate the empirical copula from a joint random sample
@@ -147,9 +173,6 @@ Movie <- function(start_point, end_point, steps) {
 #' @return
 #'         The two list members are also named x and y and the list
 #'         itself is of class type \code{2DSample}.
-#'
-#' @return The empirical copula model of the joint sampleas a list
-#'         with two vectors of x and y of the samples coordinates.
 #'
 #' @export
 #' @examples
